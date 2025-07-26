@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal - Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <img src="prudent-logo-2.png" alt="School Logo">
+            <h1>Student Portal</h1>
+        </div>
+        
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="studentId">Student ID</label>
+                <input type="text" id="studentId" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+            </div>
+            
+            <button type="submit" class="login-btn">Login</button>
+            
+            <div id="loginError" class="error-message"></div>
+            
+            <div class="forgot-password">
+                <a href="#">Forgot Password?</a> (Contact Admin)
+            </div>
+        </form>
+    </div>
+    
+    <script src="js/auth.js"></script>
+</body>
+</html>

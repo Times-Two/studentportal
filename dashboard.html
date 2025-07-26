@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal - Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        <i class="fas fa-bars"></i>
+    </button>
+    
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>Student Portal</h2>
+                <p>Welcome back!</p>
+            </div>
+            
+            <div class="sidebar-menu">
+                <div class="menu-item active" data-section="profile">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </div>
+                <div class="menu-item" data-section="results">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Report Card</span>
+                </div>
+                <div class="menu-item" data-section="fees">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <span>School Fees</span>
+                </div>
+                <div class="menu-item" data-section="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </div>
+                <div class="menu-item" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Profile Section -->
+            <div id="profile-section" class="content-section">
+                <div class="profile-card">
+                    <div class="profile-header">
+                        <div class="profile-pic">
+                            <img src="IMG-20250203-WA0001.jpg" alt="Profile Picture">
+                        </div>
+                        <div class="profile-info">
+                            <h2 id="student-name">John Doe</h2>
+                            <p id="student-id">ID: STU20230001</p>
+                            <p id="student-class">Grade 10 - Science</p>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-details">
+                        <div class="detail-item">
+                            <h4>Current Term</h4>
+                            <p id="student-term">First Term 2023</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Position</h4>
+                            <p id="student-position">5th</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Attendance</h4>
+                            <p id="student-attendance">92%</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Promotion Status</h4>
+                            <p id="student-promot">Promoted to JHS 2</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Recent Announcements</h3>
+                        <button class="btn btn-outline">
+                            <i class="fas fa-bell"></i> View All
+                        </button>
+                    </div>
+                    <div class="announcements-list">
+                        <div class="announcement-item">
+                            <div class="announcement-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="announcement-content">
+                                <h4>Mid-Term Break</h4>
+                                <p class="announcement-date">October 15, 2023</p>
+                                <p>School will be closed from October 20-27 for mid-term break. Classes resume on October 28.</p>
+                            </div>
+                        </div>
+                        <div class="announcement-item">
+                            <div class="announcement-icon">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <div class="announcement-content">
+                                <h4>Science Fair</h4>
+                                <p class="announcement-date">October 10, 2023</p>
+                                <p>The annual science fair will be held on November 15. Registration deadline is November 1.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Results Section -->
+            <div id="results-section" class="content-section hidden">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Report Card - First Term 2023</h3>
+                        <div class="card-actions">
+                            <button class="btn" id="print-report-btn">
+                                <i class="fas fa-print"></i> Print Report
+                            </button>
+                            <button class="btn btn-outline">
+                                <i class="fas fa-download"></i> Download PDF
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="result-summary">
+                        <div class="summary-item">
+                            <div class="summary-icon">
+                                <i class="fas fa-percentage"></i>
+                            </div>
+                            <div class="summary-content">
+                                <h4>Term Average</h4>
+                                <p class="score">85.6%</p>
+                            </div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="summary-content">
+                                <h4>Position</h4>
+                                <p class="position">5th / 120</p>
+                            </div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="summary-content">
+                                <h4>Attendance</h4>
+                                <p class="attendance">92%</p>
+                            </div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="summary-content">
+                                <h4>Promotion</h4>
+                                <p class="promotion">Approved</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Subject</th>
+                                    <th>Score</th>
+                                    <th>Grade</th>
+                                    <th>Comment</th>
+                                </tr>
+                            </thead>
+                            <tbody id="results-table">
+                                <!-- Results will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="teacher-comments">
+                        <div class="comments-header">
+                            <i class="fas fa-comment-dots"></i>
+                            <h4>Form Teacher's Remarks</h4>
+                        </div>
+                        <p>John has shown consistent improvement this term. He participates well in class discussions and submits assignments on time. With more effort in Mathematics, he can achieve even better results next term.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Fees Section -->
+            <div id="fees-section" class="content-section hidden">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Fee Payment</h3>
+                    </div>
+                    
+                    <div class="fee-status">
+                        <div class="status-item">
+                            <h4>Current Term Fees</h4>
+                            <p class="amount">GHS 1,500.00</p>
+                        </div>
+                        <div class="status-item">
+                            <h4>Amount Paid</h4>
+                            <p class="amount paid">GHS 0.00</p>
+                        </div>
+                        <div class="status-item">
+                            <h4>Balance</h4>
+                            <p class="amount balance">GHS 1,500.00</p>
+                        </div>
+                        <div class="status-item">
+                            <h4>Status</h4>
+                            <p class="badge badge-danger">Partially Paid</p>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-actions">
+                        <button class="btn" id="pay-fees-btn">
+                            <i class="fas fa-credit-card"></i> Pay Fees
+                        </button>
+                        <button class="btn btn-outline" id="receipt-history-btn">
+                            <i class="fas fa-history"></i> Payment History
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="card hidden" id="payment-form">
+                    <div class="card-header">
+                        <h3>Make Payment</h3>
+                    </div>
+                    
+                    <form id="feePaymentForm">
+                        <div class="form-group">
+                            <label for="payment-amount">Amount (GHS)</label>
+                            <input type="number" id="payment-amount" min="10" step="0.01" value="300.00" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="payment-method">Payment Method</label>
+                            <select id="payment-method" required>
+                                <option value="">Select method</option>
+                                <option value="card">Credit/Debit Card</option>
+                                <option value="mobile_money">Mobile Money</option>
+                                <option value="bank">Bank Transfer</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="payment-phone">Mobile Number (for MOMO)</label>
+                            <input type="tel" id="payment-phone" placeholder="0244123456">
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-outline" id="cancel-payment">
+                                Cancel
+                            </button>
+                            <button type="submit" class="btn">
+                                <i class="fas fa-lock"></i> Proceed to Pay
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="card" id="payment-history">
+                    <div class="card-header">
+                        <h3>Payment History</h3>
+                        <button class="btn btn-outline">
+                            <i class="fas fa-download"></i> Export
+                        </button>
+                    </div>
+                    
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Amount</th>
+                                    <th>Method</th>
+                                    <th>Status</th>
+                                    <th>Receipt</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Oct 15, 2023</td>
+                                    <td>GHS 500.00</td>
+                                    <td>Mobile Money</td>
+                                    <td><span class="badge badge-success">Completed</span></td>
+                                    <td><a href="#" class="download-receipt"><i class="fas fa-download"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>Sep 1, 2023</td>
+                                    <td>GHS 300.00</td>
+                                    <td>Card</td>
+                                    <td><span class="badge badge-success">Completed</span></td>
+                                    <td><a href="#" class="download-receipt"><i class="fas fa-download"></i></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="table-footer">
+                        <div class="table-info">
+                            Showing 1 to 2 of 2 entries
+                        </div>
+                        <div class="table-pagination">
+                            <button class="btn btn-outline" disabled>Previous</button>
+                            <button class="btn btn-outline active">1</button>
+                            <button class="btn btn-outline" disabled>Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Settings Section -->
+            <div id="settings-section" class="content-section hidden">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Account Settings</h3>
+                    </div>
+                    
+                    <form id="settingsForm">
+                        <div class="form-group">
+                            <label for="current-password">Current Password</label>
+                            <input type="password" id="current-password" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="new-password">New Password</label>
+                            <input type="password" id="new-password" required minlength="8">
+                            <div class="password-hint">
+                                Password must be at least 8 characters long
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="confirm-password">Confirm New Password</label>
+                            <input type="password" id="confirm-password" required>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="reset" class="btn btn-outline">
+                                Cancel
+                            </button>
+                            <button type="submit" class="btn">
+                                Update Password
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Profile Picture</h3>
+                    </div>
+                    
+                    <div class="profile-picture-form">
+                        <div class="profile-pic-preview">
+                            <img src="IMG-20250203-WA0001.jpg" alt="Current Profile Picture" id="profile-pic-preview">
+                        </div>
+                        
+                        <form id="profilePicForm">
+                            <div class="form-group">
+                                <label for="profile-pic-upload">Upload New Picture</label>
+                                <input type="file" id="profile-pic-upload" accept="image/*">
+                            </div>
+                            
+                            <button type="submit" class="btn">
+                                <i class="fas fa-upload"></i> Update Picture
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Payment Modal -->
+    <div id="payment-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-icon">
+                <i class="fas fa-credit-card"></i>
+            </div>
+            <h3>Complete Your Payment</h3>
+            <p>You will be redirected to a secure payment page to complete your payment of <span id="payment-amount-display">GHS 300.00</span></p>
+            
+            <div class="payment-method-info">
+                <i class="fas fa-lock"></i>
+                <span>Secure payment processed by Paystack</span>
+            </div>
+            
+            <div class="modal-actions">
+                <button class="btn btn-outline" id="cancel-payment-modal">
+                    Cancel
+                </button>
+                <button id="proceed-to-payment" class="btn">
+                    Proceed to Payment
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Success Alert Template -->
+    <div id="success-alert-template" class="alert alert-success hidden">
+        <i class="fas fa-check-circle"></i>
+        <div class="alert-content"></div>
+        <button type="button" class="close-alert">&times;</button>
+    </div>
+    
+    <script src="js/dashboard.js"></script>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+</body>
+</html>
